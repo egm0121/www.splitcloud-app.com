@@ -1,0 +1,120 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body{
+background-image:url('../img/bg.jpg');
+background-size:100%;
+background-repeat:no-repeat;
+background-color:#020202;
+font-family: 'Lato', sans-serif;
+padding-top:30px;
+}
+h2,h3,h5,h4{
+font-weight:normal;
+}
+
+.app-icon{
+	max-width:120px;
+	position: relative;
+	top: -10px;
+	margin-right:25px;
+}
+.iphone img{
+	max-height:600px;
+
+}
+/*final-state */
+.hero {
+	position:relative;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	-ms-transition: all 1s linear;
+	transition: all 1s linear;
+
+	-webkit-transform-origin: right center;
+	-webkit-transform: perspective( 1000px );
+
+	-moz-transform-origin: right center;
+	-moz-transform: perspective( 1000px );
+
+	transform-origin: right center;
+	transform: perspective( 1000px );
+}
+.hero.intro-setup{
+
+	-webkit-transform: perspective( 1000px ) rotateY( -90deg );
+	-moz-transform: perspective( 1000px ) rotateY( -90deg );
+	-ms-transform: translateX(400px);
+	transform: perspective( 1000px ) rotateY( -90deg );
+
+}
+
+#headline{
+font-size:30px;
+color:white;
+
+}
+footer{
+ color:white;
+ text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+
+}
+.press {
+	/*margin-top:100px;*/
+}
+.press a{
+ color:white;
+ /*font-weight:bold;*/
+text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+.press blockquote {
+ padding:5px;
+ border-radius:5px;
+ background-color:rgba(0,0,0,0.2);
+
+ font-size :20px;
+
+}
+.press cite{
+	font-size:15px;
+	color:#F0F0F0 ;
+}
+#callToAction{
+display:inline-block;
+line-height:20px;
+margin-top:9px;
+}
+
+@media only screen and (max-width: 767px){
+
+	body{
+
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-color:#020202;
+		font-family: "Helvetica Neue", sans-serif ;
+		padding-top:30px;
+	}
+	.app-icon{
+		max-width:100px;
+		margin-right: 10px;
+	}
+	.app-logo{
+		max-width:50%;
+	}
+	.social-btns{
+		display:none;
+	}
+	.hero.intro-setup{
+
+		-webkit-transform: none;
+		-moz-transform:none;
+		-ms-transform: none;
+		transform: none;
+
+	}
+
+}
