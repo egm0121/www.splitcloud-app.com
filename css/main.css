@@ -6,14 +6,13 @@
 
 body{
 background-image:url('../img/bg.jpg');
-background-size:100%;
+background-size:cover;
 background-repeat:no-repeat;
 background-color:#020202;
+background-position: center center;
 font-family: 'Lato', sans-serif;
+font-weight: bold;
 padding-top:30px;
-}
-h2,h3,h5,h4{
-font-weight:normal;
 }
 
 .app-icon{
@@ -23,16 +22,16 @@ font-weight:normal;
 	margin-right:25px;
 }
 .iphone img{
-	max-height:600px;
+	max-height:500px;
 
 }
 /*final-state */
 .hero {
 	position:relative;
-	-webkit-transition: all 1s linear;
-	-moz-transition: all 1s linear;
-	-ms-transition: all 1s linear;
-	transition: all 1s linear;
+	-webkit-transition: all 2s linear;
+	-moz-transition: all 2s linear;
+	-ms-transition: all 2s linear;
+	transition: all 2s linear;
 
 	-webkit-transform-origin: right center;
 	-webkit-transform: perspective( 1000px );
@@ -53,9 +52,8 @@ font-weight:normal;
 }
 
 #headline{
-font-size:30px;
-color:white;
-
+	font-size:30px;
+	color:white;
 }
 footer{
  color:white;
@@ -67,18 +65,20 @@ footer{
 }
 .press a{
  color:white;
- /*font-weight:bold;*/
-text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+ font-weight:bold;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 .press blockquote {
  padding:5px;
  border-radius:5px;
- background-color:rgba(0,0,0,0.2);
+
+ background-color: rgba(255, 255, 255, 0.3);
 
  font-size :20px;
 
 }
 .press cite{
+	font-weight:bold;
 	font-size:15px;
 	color:#F0F0F0 ;
 }
@@ -87,16 +87,21 @@ display:inline-block;
 line-height:20px;
 margin-top:9px;
 }
+.fb_iframe_widget {
+	top:2px;
+}
 
 @media only screen and (max-width: 767px){
 
 	body{
-
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-color:#020202;
 		font-family: "Helvetica Neue", sans-serif ;
 		padding-top:30px;
+	}
+	h2,h3,h5,h4{
+		font-weight:normal;
 	}
 	.app-icon{
 		max-width:100px;
@@ -117,4 +122,29 @@ margin-top:9px;
 
 	}
 
+}
+@media only screen and (min-width: 768px){
+	html{
+	  height: 100%
+	}
+
+}
+@media only screen and (min-width: 768px) and (min-height: 880px){
+	html, body{
+		overflow: hidden;
+	}
+	.iphone img{
+		max-height:600px;
+
+	}
+	.main-content{
+		height: 500px;
+	    top: calc(50% - 300px);
+	    position: absolute;
+	    display: inline-block;
+	}
+	footer {
+		position: fixed;
+		bottom: 50px;
+	}
 }

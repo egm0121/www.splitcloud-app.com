@@ -18,21 +18,24 @@
     </head>
     <body>
         <div class="container">
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="row">
-            <div id='headline' class=" span9 ">
-            	<img src='./img/splitr_icon.png' class='app-icon' alt='Splitr App Icon'>
+            <header>
+                <img src='./img/splitr_icon.png' class='app-icon' alt='Splitr App Icon'>
                 <img src='./img/logo.png' class='app-logo' alt='Splitr !'>
+            </header>
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            <div class="row main-content">
+            <div id='headline' class=" span9 ">
 
-                <h2>Enjoy sharing your music</h2>
+
+                <h1>Enjoy sharing your music.</h1>
                 <div class="row">
                 	<div class="span6 ">
 
                     	 <div class="row">
-         					<div class="span4">
-         					<h5>Splitr let's you share your earphones with who's next to you and play
-		 					two different songs at the same time.</h5>
-		 						<h3>Get Splitr for free!</h3>
+         					<div class="span6">
+         					<h4>Splitr let's you share your earphones with who's next to you.</h4>
+                            <h4>Play two different tracks at the same time.</h4>
+		 						<h2>Get Splitr for free!</h2>
 		 						<a href="https://itunes.apple.com/us/app/splitr/id634381648?mt=8&uo=4" target="itunes_store"style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
 
 
@@ -66,7 +69,7 @@
                 		<div class="social-btns">
 	                		<a href="https://twitter.com/SplitrApp" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @SplitrApp</a>
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	                		<div class="fb-like" data-href="https://www.facebook.com/SplitrApp" data-send="true" data-width="450" data-show-faces="false"></div>
+	                		<div class="fb-like" data-href="https://www.facebook.com/SplitrApp/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 		</div>
 
                 	</div>
@@ -80,21 +83,22 @@
         </div>
 
          <footer>
-                <p>&copy; G.Dellorbo (egm0121@gmail.com) - 2015  </p>
+                <p>&copy; Giulio Dellorbo (egm0121@gmail.com) - 2016  </p>
 
             </footer>
 
         </div> <!-- /container -->
 
+
        <div id="fb-root"></div>
-		<script>
-      (function(d, s, id) {
-  		  var js, fjs = d.getElementsByTagName(s)[0];
-  		  if (d.getElementById(id)) return;
-  		  js = d.createElement(s); js.id = id;
-  		  js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1&appId=205124376164419";
-  		  fjs.parentNode.insertBefore(js, fjs);
-  		}(document, 'script', 'facebook-jssdk'));
+	   <script>
+        (function(d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=339864939473152";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
 
 	   var _gaq = _gaq || [];
 		  _gaq.push(['_setAccount', 'UA-39900543-1']);
@@ -106,25 +110,25 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 
-      (function(){
-          /*!
-          loadCSS: load a CSS file asynchronously.
-          [c]2014 @scottjehl, Filament Group, Inc.
-          Licensed MIT
-          */
-          function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
-          /* min.js (https://github.com/remy/min.js/blob/master/dist/%24.min.js) */
-          $=function(t,n,e){var i=Node.prototype,r=NodeList.prototype,o="forEach",u="trigger",c=[][o],s=t.createElement("i");return r[o]=c,n.on=i.on=function(t,n){return this.addEventListener(t,n,!1),this},r.on=function(t,n){return this[o](function(e){e.on(t,n)}),this},n[u]=i[u]=function(n,e){var i=t.createEvent("HTMLEvents");return i.initEvent(n,!0,!0),i.data=e||{},i.eventName=n,i.target=this,this.dispatchEvent(i),this},r[u]=function(t){return this[o](function(n){n[u](t)}),this},e=function(n){var e=t.querySelectorAll(n||"☺"),i=e.length;return 1==i?e[0]:e},e.on=i.on.bind(s),e[u]=i[u].bind(s),e}(document,this);
+          (function(){
+              /*!
+              loadCSS: load a CSS file asynchronously.
+              [c]2014 @scottjehl, Filament Group, Inc.
+              Licensed MIT
+              */
+              function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
+              /* min.js (https://github.com/remy/min.js/blob/master/dist/%24.min.js) */
+              $=function(t,n,e){var i=Node.prototype,r=NodeList.prototype,o="forEach",u="trigger",c=[][o],s=t.createElement("i");return r[o]=c,n.on=i.on=function(t,n){return this.addEventListener(t,n,!1),this},r.on=function(t,n){return this[o](function(e){e.on(t,n)}),this},n[u]=i[u]=function(n,e){var i=t.createEvent("HTMLEvents");return i.initEvent(n,!0,!0),i.data=e||{},i.eventName=n,i.target=this,this.dispatchEvent(i),this},r[u]=function(t){return this[o](function(n){n[u](t)}),this},e=function(n){var e=t.querySelectorAll(n||"☺"),i=e.length;return 1==i?e[0]:e},e.on=i.on.bind(s),e[u]=i[u].bind(s),e}(document,this);
 
-          loadCSS('http://fonts.googleapis.com/css?family=Lato:100');
-                //$hero.attr('src','./img/'+(['iphone_hero_web.png','ipod5g.png'][Math.round(Math.random())]));
-          var intro = $('#intro-iphone'),
-              exceptSetup = function(e){return e != 'intro-setup';};
-          intro.on('load',function(){
-            intro.className = intro.className.split(' ').filter(exceptSetup).join(' ');
-          });
+              loadCSS('http://fonts.googleapis.com/css?family=Lato:100');
+                    //$hero.attr('src','./img/'+(['iphone_hero_web.png','ipod5g.png'][Math.round(Math.random())]));
+              var intro = $('#intro-iphone'),
+                  exceptSetup = function(e){return e != 'intro-setup';};
+              intro.on('load',function(){
+                intro.className = intro.className.split(' ').filter(exceptSetup).join(' ');
+              });
 
-      })();
+          })();
 		</script>
     </body>
 </html>
