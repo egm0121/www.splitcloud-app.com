@@ -34,11 +34,10 @@
                     	 <div class="row">
          					<div class="span6">
          					<h4>Splitr let's you share your earphones with who's next to you.</h4>
-                            <h4>Play two different tracks at the same time.</h4>
+                  <h4>Play two different tracks at the same time.</h4>
 		 						<h2>Get Splitr for free!</h2>
-		 						<a href="https://itunes.apple.com/us/app/splitr/id634381648?mt=8&uo=4" target="itunes_store"style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(http://linkmaker.itunes.apple.com/htmlResources/assets/images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
-
-
+		 					  <a href="https://itunes.apple.com/us/app/splitr/id634381648?mt=8"
+                style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;"></a>
 		 					</div>
 
          				</div>
@@ -49,26 +48,30 @@
                 		<div class="row">
                 		<div class="span3 ">
                 		<blockquote>
-  							<a href="http://appadvice.com/appnn/2013/05/splitr-is-for-music-fans-willing-to-share">Splitr takes sharing music to an entirely new level</a>
-  							<small><cite title="Source Title">AppAdvice.com</cite></small>
+  							<a href="http://appadvice.com/appnn/2013/05/splitr-is-for-music-fans-willing-to-share">
+                  Splitr takes sharing music to an entirely new level
+                </a>
+  							<small><cite title="Source Title">appadvice.com</cite></small>
 						</blockquote>
 						</div>
 						<div class="span3 ">
 						<blockquote>
-  							<a href="http://www.iphoneitalia.com/un-paio-di-auricolari-due-brani-diversi-ecco-splitr-lapp-per-condividere-la-musica-con-chi-ti-sta-accanto-471815.html">Un paio di auricolari, due brani diversi: ecco Splitr</a>
-  							<small><cite title="Source Title">Iphoneitalia.it</cite></small>
+  							<a href="http://www.ispazio.net/414945/splitr-ascoltare-due-brani-contemporaneamente-e-realta-quickapp">
+                Splitr: ascoltare due brani contemporaneamente è realtà!
+                </a>
+  							<small><cite title="Source Title">ispazio.net</cite></small>
 						</blockquote>
 						</div>
 						<div class="span3">
 						<blockquote>
   							<a href="http://feedmyapp.com/review/skrillex-leftbeyonce-right/">A brilliant idea</a>
-  							<small><cite title="Source Title">Feedmyapp.com</cite></small>
+  							<small><cite title="Source Title">feedmyapp.com</cite></small>
 						</blockquote>
                 		</div>
                 		</div>
                 		<div class="social-btns">
 	                		<a href="https://twitter.com/SplitrApp" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @SplitrApp</a>
-							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	                		<div class="fb-like" data-href="https://www.facebook.com/SplitrApp/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
                 		</div>
 
@@ -83,12 +86,9 @@
         </div>
 
          <footer>
-                <p>&copy; Giulio Dellorbo (egm0121@gmail.com) - 2016  </p>
-
-            </footer>
-
+                <p>&copy; Giulio Dellorbo (egm0121@gmail.com) - </p>
+         </footer>
         </div> <!-- /container -->
-
 
        <div id="fb-root"></div>
 	   <script>
@@ -121,13 +121,13 @@
               $=function(t,n,e){var i=Node.prototype,r=NodeList.prototype,o="forEach",u="trigger",c=[][o],s=t.createElement("i");return r[o]=c,n.on=i.on=function(t,n){return this.addEventListener(t,n,!1),this},r.on=function(t,n){return this[o](function(e){e.on(t,n)}),this},n[u]=i[u]=function(n,e){var i=t.createEvent("HTMLEvents");return i.initEvent(n,!0,!0),i.data=e||{},i.eventName=n,i.target=this,this.dispatchEvent(i),this},r[u]=function(t){return this[o](function(n){n[u](t)}),this},e=function(n){var e=t.querySelectorAll(n||"☺"),i=e.length;return 1==i?e[0]:e},e.on=i.on.bind(s),e[u]=i[u].bind(s),e}(document,this);
 
               loadCSS('http://fonts.googleapis.com/css?family=Lato:100');
-                    //$hero.attr('src','./img/'+(['iphone_hero_web.png','ipod5g.png'][Math.round(Math.random())]));
+
               var intro = $('#intro-iphone'),
                   exceptSetup = function(e){return e != 'intro-setup';};
               intro.on('load',function(){
                 intro.className = intro.className.split(' ').filter(exceptSetup).join(' ');
               });
-
+              $('footer > p').innerHTML += new Date().getFullYear();
           })();
 		</script>
     </body>
