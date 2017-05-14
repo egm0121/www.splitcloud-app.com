@@ -15,6 +15,14 @@ font-weight: bold;
 padding-top:30px;
 }
 
+header h1{
+    display: inline;
+    color: white;
+    font-size:50px;
+}
+.font-light{
+    font-weight: lighter;
+}
 .app-icon{
 	max-width:120px;
 	position: relative;
@@ -60,8 +68,8 @@ footer{
  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 
 }
-.press {
-	/*margin-top:100px;*/
+.press .span12 {
+	margin-top:70px;
 }
 .press a{
  color:white;
