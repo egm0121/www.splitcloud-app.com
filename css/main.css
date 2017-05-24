@@ -5,23 +5,28 @@
    ========================================================================== */
 
 body{
-background-image:url('../img/bg.jpg');
-background-size:cover;
-background-repeat:no-repeat;
-background-color:#020202;
-background-position: center center;
-font-family: 'Lato', sans-serif;
-font-weight: bold;
-padding-top:30px;
+  background-image:url('../img/bg_alt.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-color:#020202;
+  background-position: center center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  padding-top:30px;
 }
+header{
+  padding-top:50px;
+  padding-bottom:50px;
+}
+ h1 {
+  display: inline;
+  color: white;
+  font-size:50px;
+  text-shadow: 0px 0px 11px #111520;
 
-header h1{
-    display: inline;
-    color: white;
-    font-size:50px;
 }
 .font-light{
-    font-weight: lighter;
+  font-weight: lighter;
 }
 .app-icon{
 	max-width:120px;
@@ -29,9 +34,14 @@ header h1{
 	top: -10px;
 	margin-right:25px;
 }
-.iphone img{
-	max-height:500px;
+.iphone {
+  position: relative;
+}
 
+.iphone img{
+  position:absolute;
+  top:-250px;
+	max-height:500px;
 }
 /*final-state */
 .hero {
@@ -63,10 +73,17 @@ header h1{
 	font-size:30px;
 	color:white;
 }
+.brand-desc{
+  padding-bottom: 20px;
+}
+.note{
+  font-size: 35px;
+}
 footer{
  color:white;
  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-
+ position: fixed;
+ bottom: 50px;
 }
 .press .span12 {
 	margin-top:70px;
@@ -108,6 +125,10 @@ margin-top:9px;
 		padding-top:30px;
 		font-weight:300;
 	}
+  .iphone img{
+		max-height:600px;
+    position:static;
+	}
 	h1,h2,h3,h5,h4 {
 		font-weight:300;
 	}
@@ -139,6 +160,9 @@ margin-top:9px;
 		text-align: center;
 		padding:20px 0px;
 	}
+  footer{
+    position: static;
+  }
 }
 @media only screen and (min-width: 768px){
 	html{
@@ -152,16 +176,12 @@ margin-top:9px;
 	}
 	.iphone img{
 		max-height:600px;
-
 	}
 	.main-content{
 		height: 500px;
-	    top: calc(50% - 300px);
-	    position: absolute;
-	    display: inline-block;
+    top: calc(50% - 200px);
+    position: absolute;
+    display: inline-block;
 	}
-	footer {
-		position: fixed;
-		bottom: 50px;
-	}
+
 }
