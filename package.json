@@ -1,0 +1,25 @@
+{
+  "name": "splitcloud-app.com",
+  "version": "1.0.0",
+  "description": "website for splitcloud iOS App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "postcss ./css/main.css --use autoprefixer -o ./css/dist.css",
+    "watch": "chokidar './css/main.css' -c 'npm run build-css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://edellorbo@bitbucket.org/edellorbo/splitr-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/edellorbo/splitr-website#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "postcss-cli": "^4.0.0"
+  },
+  "dependencies": {
+    "chokidar-cli": "^1.2.0"
+  }
+}
