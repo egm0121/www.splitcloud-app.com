@@ -1,0 +1,158 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body{
+  background-image:url('../img/sunset_birds.jpg');
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-color:#1b1b20;
+  background-position: top center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  padding-top:30px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+header{
+  padding-top:50px;
+  padding-bottom:100px;
+}
+ h1 {
+  display: inline;
+  color: white;
+  font-size:50px;
+}
+h4 {
+  font-size: 20.5px;
+  line-height: 30px;
+}
+.font-light{
+  font-weight: lighter;
+}
+.app-icon{
+	max-width:120px;
+	position: relative;
+	top: -10px;
+	margin-right:25px;
+  border-radius : 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.iphone {
+  position: relative;
+  padding-bottom:100px;
+  padding-top:100px;
+}
+.iphone img{
+	max-height:700px;
+}
+/*final-state */
+.hero {
+  transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);
+	position:relative;
+	transform-origin: center center;
+	transform: perspective( 1500px );
+  transform: perspective( 1500px ) rotateY( 20deg );
+}
+.hero:hover{
+	transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);
+	transform-origin: center center;
+	transform: perspective( 1500px ) ;
+}
+.hero.intro-setup{
+
+	transform: perspective( 1500px );
+}
+#headline{
+	font-size:30px;
+	color:white;
+}
+.brand-desc{
+  padding-bottom: 20px;
+}
+.note{
+  font-size: 35px;
+}
+.padding-25{
+  padding-top:25px;
+}
+footer {
+  margin-top: 100px;
+  background-color:#af5204;
+  color:white;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  padding-top:50px;
+  padding-bottom:50px;
+}
+#callToAction{
+  display:inline-block;
+  line-height:20px;
+  margin-top:9px;
+}
+.fb_iframe_widget {
+	top:2px;
+}
+
+@media only screen and (max-width: 767px){
+	body{
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-color:#020202;
+		font-family: "Helvetica Neue", sans-serif ;
+		padding-top:30px;
+		font-weight:300;
+	}
+  .container{
+    margin-left:20px;
+    margin-right:20px;
+  }
+  .iphone img{
+		max-height:600px;
+    position:static;
+	}
+	h1,h2,h3,h5,h4 {
+		font-weight:300;
+	}
+	.press a {
+		font-weight: 300;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+	}
+	.app-icon{
+		max-width: 100px;
+		margin-right: 10px;
+	}
+	.app-logo{
+		max-width:50%;
+	}
+	.social-btns{
+		display:none;
+	}
+	.hero {
+		-webkit-transform: none;
+		-moz-transform:none;
+		-ms-transform: none;
+		transform: none;
+
+	}
+	.iphone , .iphone img {
+			float:none;
+	}
+	.iphone{
+		text-align: center;
+		padding:20px 0px;
+	}
+}
+@media only screen and (min-width: 768px){
+	html{
+	  height: 100%
+	}
+
+}
+@media only screen and (min-width: 768px) and (min-height: 880px){
+	html, body{
+		overflow: auto;
+	}
+
+}
