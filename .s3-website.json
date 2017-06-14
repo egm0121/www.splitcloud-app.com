@@ -6,6 +6,6 @@
    "corsConfiguration": [],
    "enableCloudfront": false,
    "retries": 20,
-   "domain": "splitcloud-app.com",
+   "domain": "www.splitcloud-app.com",
    "configFile": ".s3-website.json"
 }

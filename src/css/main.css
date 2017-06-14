@@ -5,7 +5,7 @@
    ========================================================================== */
 
 body{
-  background-image:url('../img/sunset_birds.jpg');
+  background-image:url('../img/sunset_birds_opt.jpg');
   background-size:cover;
   background-repeat:no-repeat;
   background-color:#1b1b20;
@@ -39,6 +39,9 @@ h4 {
 	margin-right:25px;
   border-radius : 20px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.app-logo{
+  height:60px;
 }
 .iphone {
   position: relative;
@@ -104,6 +107,19 @@ footer {
 		padding-top:30px;
 		font-weight:300;
 	}
+  .app-icon{
+  	max-width:60px;
+    border-radius:10px;
+    margin-right: 10px;
+  }
+  .app-logo{
+    height: 50px;
+    position: relative;
+    top: -8px;
+  }
+  .mobile-hidden{
+    display:none;
+  }
   .container{
     margin-left:20px;
     margin-right:20px;
@@ -115,16 +131,13 @@ footer {
 	h1,h2,h3,h5,h4 {
 		font-weight:300;
 	}
+  h1{
+    font-size:40px;
+    line-height: 50px;
+  }
 	.press a {
 		font-weight: 300;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-	}
-	.app-icon{
-		max-width: 100px;
-		margin-right: 10px;
-	}
-	.app-logo{
-		max-width:50%;
 	}
 	.social-btns{
 		display:none;
