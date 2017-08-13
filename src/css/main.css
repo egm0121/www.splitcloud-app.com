@@ -49,22 +49,37 @@ h4 {
   padding-top:100px;
 }
 .iphone img{
-	max-height:700px;
+
 }
 /*final-state */
 .hero {
-  transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);
-	position:relative;
-	transform-origin: center center;
-  transform: perspective( 1500px ) rotateY( 20deg );
+  /*transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);*/
+  position: relative;
+	/*transform-origin: center center;
+  transform: perspective( 1500px ) rotateY( 20deg );*/
+}
+.iphone-container{
+  position: relative;
+  width: 43vw;
+  margin: 0px auto;
+  max-width: 450px;
+}
+.iphone-container .hero{
+  width: 100%;
+}
+.iphone-container #app-demo{
+  width: 84.5%;
+  position: absolute;
+  top: 14.5%;
+  left: 7.7%;
 }
 .hero:hover{
-	transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);
+	/*transition: transform 0.5s cubic-bezier(0, 1.4, 1, 1);
 	transform-origin: center center;
-	transform: perspective( 1500px ) ;
+	transform: perspective( 1500px ) ; */
 }
 .hero.intro-setup{
-	transform: perspective( 1500px );
+	/*transform: perspective( 1500px ); */
 }
 .download-badge{
   text-align:right;
@@ -86,9 +101,10 @@ footer {
   margin-top: 100px;
   background-color:#af5204;
   color:white;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
   padding-top:50px;
   padding-bottom:50px;
+  background-color: #2f363f;
+  font-size: 18px;
 }
 #callToAction{
   display:inline-block;
@@ -129,10 +145,7 @@ footer {
     margin-left:20px;
     margin-right:20px;
   }
-  .iphone img{
-		max-height:600px;
-    position:static;
-	}
+
 	h1,h2,h3,h5,h4 {
 		font-weight:300;
 	}
@@ -150,18 +163,18 @@ footer {
 	.social-btns{
 		display:none;
 	}
-	.hero {
-		transform: none;
-	}
-	.iphone , .iphone img {
-			float:none;
-	}
+  .iphone-container{
+    width: 75vw;
+  }
 	.iphone{
 		text-align: center;
 		padding:20px 0px;
 	}
   .download-badge{
     text-align:center;
+  }
+  footer{
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 768px){
