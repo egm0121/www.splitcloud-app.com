@@ -11,34 +11,43 @@ body{
   background-color: #1b1b20;
   background-position: top center;
   font-family: 'Lato', sans-serif;
-  font-weight: bold;
+  font-weight: normal;
   padding-top:30px;
   padding-left: 0px;
   padding-right: 0px;
 }
 header{
   padding-top:50px;
-  padding-bottom:20vh;
+  padding-bottom:50px;
 }
  h1 {
   display: inline;
   color: white;
-  font-size:50px;
-  line-height: 60px;
+  font-weight: normal;
+  font-size: 60px;
+  line-height: 80px;
+}
+h1 small{
+  font-weight: normal;
+  color:white;
 }
 h4 {
-  font-size: 20.5px;
-  line-height: 30px;
+  font-weight: normal;
+  font-size: 26.5px;
+  line-height: 40px;
+}
+.badge-large{
+  padding: 120px 0px;  
 }
 .font-light{
   font-weight: lighter;
 }
 .app-icon{
-	max-width:120px;
-	position: relative;
-	top: -10px;
+  max-width: 140px;
+  position: relative;
+  top: -10px;
 	margin-right:25px;
-  border-radius : 20px;
+  border-radius : 70px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 .app-logo{
@@ -77,15 +86,13 @@ h4 {
 	font-size:30px;
 	color:white;
 }
-.brand-desc{
-  padding-bottom: 20vh;
-}
 .note{
-  font-size: 35px;
+  font-size: 50px;
 }
 .padding-25{
   padding-top:25px;
 }
+
 footer {
   margin-top: 50px;
   color: #a1a1a1;
@@ -93,6 +100,7 @@ footer {
   padding-bottom: 50px;
   background-color: #2f363f;
   font-size: 20px;
+  box-shadow: 0px 0px 30px 0px black;
 }
 #callToAction{
   display:inline-block;
@@ -115,10 +123,13 @@ footer {
 		font-family: "Helvetica Neue", sans-serif ;
 		padding-top:30px;
 		font-weight:300;
-	}
+  }
+  .badge-large{
+    padding: 20px 0px;  
+  }
   .app-icon{
   	max-width:60px;
-    border-radius:10px;
+    border-radius:30px;
     margin-right: 10px;
   }
   .app-logo{
@@ -139,7 +150,10 @@ footer {
 	}
   h1{
     font-size:25px;
-    line-height: 30px;
+    line-height: 35px;
+  }
+  h1 small{
+    font-size:14px;
   }
   .note{
     font-size: 25px;
