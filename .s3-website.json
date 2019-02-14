@@ -3,6 +3,10 @@
    "region": "us-east-1",
    "uploadDir": "./dist",
    "prefix": "",
+   "exclude": [
+      "app/*",
+      "charts/*"
+   ],
    "corsConfiguration": [],
    "enableCloudfront": false,
    "retries": 20,

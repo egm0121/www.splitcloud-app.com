@@ -5,13 +5,15 @@
    ========================================================================== */
 
 body{
-  background: linear-gradient(to right, hsla(27, 96%, 72%, 1), #FF5F6D);
+  /*background: linear-gradient(to right, hsla(27, 96%, 72%, 1), #FF5F6D); */
+  background-image: url('../img/fullscreen_share_site_bg.jpg');
   background-size: cover;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-color: #1b1b20;
   background-position: top center;
   font-family: 'Lato', sans-serif;
   font-weight: normal;
+  line-height: 20px;
   padding-top:30px;
   padding-left: 0px;
   padding-right: 0px;
@@ -31,11 +33,12 @@ header{
   padding-bottom:50px;
 }
  h1 {
-  display: inline;
+  display: inline-block;
   color: white;
   font-weight: normal;
   font-size: 60px;
   line-height: 80px;
+  margin-bottom:50px;
 }
 h1 small{
   font-weight: normal;
@@ -49,8 +52,19 @@ h4 {
   font-size: 26.5px;
   line-height: 40px;
 }
+a {
+  font-size: 18px;
+  color:#f2f2f2;
+}
+p {
+  font-size: 16px;
+}
+ul li {
+  list-style: none;
+  font-size: 16px;
+}
 .badge-large{
-  padding: 120px 0px;  
+  padding-top: 35px; 
 }
 .font-light{
   font-weight: lighter;
@@ -88,10 +102,10 @@ h4 {
   width: 100%;
 }
 .iphone-container #app-demo{
-  width: 84.5%;
+  width: 82%;
   position: absolute;
-  top: 14.4%;
-  left: 7.6%;
+  top: 6%;
+  left: 8.8%;
 }
 .download-badge{
   text-align:right;
@@ -113,13 +127,13 @@ h4 {
   color: #f2f2f2;
 }
 
-li {
+.features-wrapper li {
   font-size: 20px;
   list-style: none;
   margin-top: 20px;
   line-height: 43px;
 }
-li span {
+.features-wrapper li span {
   background-color: #ffffff42;
   padding: 10px 10px;
   border-left: 3px solid;
@@ -248,7 +262,7 @@ footer {
 }
 @media only screen and (min-width: 768px){
 	html{
-	  height: 100%
+	  height: 2100px;
 	}
 
 }
