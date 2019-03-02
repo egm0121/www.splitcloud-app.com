@@ -7,14 +7,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Get SplitCloud - The Double Music Player for iOS</title>
-        <meta name="description" content="Get SplitCloud - The Double Music Player for iOS">
+        <meta name="description" content="Get SplitCloud - The Double Music Player for iOS with SoundCloud streaming support and offline play support, get it for free on the AppStore and discover new music">
         <meta name="viewport" content="width=device-width">
         <meta property="og:title" content="Get SplitCloud - The Double Music Player for iOS" />
         <meta property="og:image" content="http://www.splitcloud-app.com/img/splitcloud_split_players.png" />
-		    <meta name="apple-itunes-app" content="app-id=1244515007" />
+		    <!--<meta name="apple-itunes-app" content="app-id=1244515007" />-->
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-        <link rel="stylesheet" href="css/dist.css?v=15" />
+        <link rel="stylesheet" href="css/dist.css?v=18" />
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     </head>
@@ -23,24 +23,23 @@
             <header>
               <div class="row">
                 <div class="span10">
-                <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
-                <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
-
-                </div>
-                <div class="span2 download-badge padding-25">
-                  <span class=""></span>
+                  <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
+                  <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
                 </div>
               </div>
             </header>
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="row main-content text-center">
-            <div id='headline' class="span12 ">
+            <div id='headline' class="span12">
+                <div class="span12 download-badge mobile-visible padding-25">
+                    <a href="https://itunes.apple.com/gb/app/splitcloud/id1244515007?mt=8" 
+                    style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width: 180px;height: 80px;background-size:contain;"></a>
+                </div>
                 <div class="row brand-desc">
                 	<div class="span12">
-                        <h1>The double music player for iOS<span class='note'> ♫</span><br/>
-                        </h1>
-                        
-                    </div>
+                    <h1>Turn your iPhone into a double music player<span class='note mobile-visible'> ♫</span><br/>
+                    </h1>
+                  </div>
                 </div>
                 <div class="row">
                   <div class="iphone">
@@ -55,7 +54,7 @@
                       src='./img/frame_iphone_x.png'
                       alt="product screenshot" />
                     </div>
-                    <div class="badge-large">
+                    <div class="badge-large mobile-hidden">
                       <a href="https://itunes.apple.com/gb/app/splitcloud/id1244515007?mt=8" 
                         style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width: 250px;height: 80px;background-size:contain;"></a>
                     </div>
@@ -65,11 +64,7 @@
           </div>
         </div> <!-- /container -->
         <!-- 
-
           Top Features:
-
-
-
         -->
         <div class="press-background-wrapper features-wrapper first-wrapper">
           <div class="container">   
@@ -78,8 +73,11 @@
                 <div class="row">
                   <div class="span12">
                     <h4>
-                      <b>SplitCloud</b> is the only music player for iOS that integrates <b>Split-Mode</b> and
-                      can access your <b>Music Library</b> plus all the tracks from <b>Soundcloud</b> streaming service.
+                        With <b>SplitCloud</b> Double Music Player use your headphones and listen to two different songs at once.
+                        <b>Play and discover</b> new music with access to <b>SoundCloud®</b> and your local Music Library.<br>
+                    </h4>
+                    <h4 class='text-center'>
+                        Get SplitCloud for free on the App Store!
                     </h4>
                     <br>
                     <h4>
@@ -214,13 +212,10 @@
        <div id="fb-root"></div>
 	   <script>
        /*GA tracking*/
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
+       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
        ga('create', 'UA-100899493-1', 'auto');
        ga('send', 'pageview');
+       ga('require', 'outboundLinkTracker');
         /*!
         loadCSS: load a CSS file asynchronously.
         [c]2014 @scottjehl, Filament Group, Inc.
@@ -229,7 +224,9 @@
         function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
         loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
 
-        document.querySelector('footer p .copy-year').innerHTML += new Date().getFullYear();;
-		</script>
+        document.querySelector('footer p .copy-year').innerHTML += new Date().getFullYear();
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <script async src="./autotrack.custom.dist.js"></script>
     </body>
 </html>
