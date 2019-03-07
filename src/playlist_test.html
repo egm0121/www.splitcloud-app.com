@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>SplitCloud Accessible SoundCloud Track</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span10">
+              <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+
+              </div>
+              <div class="span2 download-badge padding-25">
+                <span class=""></span>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Playlist Tracks Tester</h1>
+            <form>
+              <input style='width:300px' id="sc_url" placeholder="Insert URL here..." />
+              <input type="button" id="validate" value="validate" />
+              <div id="result"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <script>
+      const $  = document.querySelector.bind(document);
+      const clientId = 'TnLKn5dpBpgxI51x2I89h6KOypTECZPF' ;
+      $('#validate').addEventListener('click', () => {
+        const url = $('#sc_url').value;
+        $('#sc_url').value = '';
+        fetch(`http://api.soundcloud.com/resolve?url=${url}&client_id=${clientId}`)
+        .then(resp => resp.json()).then(data => {
+          if(data && !data.streamable) throw Error('Unstreamable Track')
+            $('#result').innerHTML += `<p>${url} is a valid track</p>`;
+          })
+        .catch(err => $('#result').innerHTML +=`<p style='color:red'>${url} is a forbidden track</p>`);
+      });
+    </script>
+  </body>
+</html>
