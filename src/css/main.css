@@ -116,6 +116,12 @@ ul li {
   width: 70%;
   right: -57%;
 }
+.iphone-container .intro-side-iphone {
+  position: absolute;
+  top: 7%;
+  width: 65%;
+  left: -52%;
+}
 .download-badge{
   text-align:right;
 }
