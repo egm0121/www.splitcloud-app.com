@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
         <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="css/dist.css?v=22" />
+        <link rel="stylesheet" href="css/dist.css?v=24" />
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     </head>
@@ -281,8 +281,11 @@
         var badgeIos = document.querySelector('.badge-ios');
         var badgeAndroid = document.querySelector('.badge-android');
         var isIOS = /^(iPhone|iPad|iPod)/.test(navigator.platform);
-        badgeIos.style.display = isIOS ? 'block':'none';
-        badgeAndroid.style.display = !isIOS ? 'block':'none';
+        if(window.matchMedia('only screen and (max-width: 767px)').matches){
+          badgeIos.style.display = isIOS ? 'block':'none';
+          badgeAndroid.style.display = !isIOS ? 'block':'none';
+         
+        }
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script async src="./autotrack.custom.dist.js"></script>
