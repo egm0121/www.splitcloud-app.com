@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Get SplitCloud - The Double Music Player for iOS</title>
+        <title>Get SplitCloud - The Double Music Player for iOS and Android</title>
         <meta name="description" content="Get SplitCloud - The Double Music Player for iOS with SoundCloud streaming support and offline play support, get it for free on the AppStore and discover new music">
         <meta name="viewport" content="width=device-width">
         <meta property="og:title" content="Get SplitCloud - The Double Music Player for iOS" />
@@ -14,7 +14,8 @@
 		    <!--<meta name="apple-itunes-app" content="app-id=1244515007" />-->
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-        <link rel="stylesheet" href="css/dist.css?v=18" />
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/dist.css?v=24" />
         <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
         <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     </head>
@@ -23,40 +24,49 @@
             <header>
               <div class="row">
                 <div class="span10">
-                  <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
-                  <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+                  <a href="./">
+                    <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
+                    <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+                  </a>
                 </div>
               </div>
             </header>
             <!-- Main hero unit for a primary marketing message or call to action -->
             <div class="row main-content text-center">
             <div id='headline' class="span12">
-                <div class="span12 download-badge mobile-visible padding-25">
+                <div class="span12 download-badge mobile-visible padding-25 badge-ios">
                     <a href="https://itunes.apple.com/app/splitcloud/id1244515007?mt=8" 
                     style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width: 180px;height: 80px;background-size:contain;"></a>
                 </div>
+                <div class="span12 download-badge mobile-visible padding-25 badge-android">
+                    <a href="https://play.google.com/store/apps/details?id=com.splitcloud" >
+                      <img style="width: 250px;vertical-align: top;" src="./img/play_store_badge.png">
+                    </a>
+                </div>
                 <div class="row brand-desc">
                 	<div class="span12">
-                    <h1>Turn your iPhone into a double music player<span class='note mobile-visible'> ♫</span><br/>
+                    <h1>Turn your smartphone into <br> a double music player<span class='note mobile-visible'> ♫</span><br/>
                     </h1>
                   </div>
                 </div>
                 <div class="row">
                   <div class="iphone">
                     <div class="iphone-container">
+                       <img id='intro-side-iphone' class='intro-side-iphone'
+                      src='./img/test_side_iphone.png'
+                      />
+                      <img id='intro-android' class='intro-android'
+                      src='./img/nexus_5x_angled.png'
+                      />
                       <video id='app-demo' autoplay loop muted playsinline>
-                        <source src="./img/splitcloud_web_intro.mp4">
                         <source src="./img/splitcloud_web_intro.webm">
+                        <source src="./img/splitcloud_web_intro.mp4">
                         <img src="./img/fallback-static.png">
                       </video>
                       <img  id='intro-iphone'
                       class='intro-setup hero'
                       src='./img/frame_iphone_x.png'
                       alt="product screenshot" />
-                    </div>
-                    <div class="badge-large mobile-hidden">
-                      <a href="https://itunes.apple.com/app/splitcloud/id1244515007?mt=8" 
-                        style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width: 250px;height: 80px;background-size:contain;"></a>
                     </div>
                   </div>
                 </div>              
@@ -66,23 +76,64 @@
         <!-- 
           Top Features:
         -->
-        <div class="press-background-wrapper features-wrapper first-wrapper">
+        <div class="background-wrapper first-wrapper" >
+            <div class="container">
+              <div class="row">
+                  <div class="span12 text-center">
+                      <div class="badge-large mobile-hidden">
+                          <a href="https://itunes.apple.com/app/splitcloud/id1244515007?mt=8" 
+                            style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width: 250px;height: 80px;background-size:contain;"></a>
+                          <a href="https://play.google.com/store/apps/details?id=com.splitcloud" >
+                            <img style="width: 250px;vertical-align: top;" src="./img/play_store_badge.png">
+                          </a>
+                        </div>
+                  </div>
+                  
+                </div>
+                <div class="row" style='display:none'>
+                    <div class="span12">
+                      <p>Enter your email to get notified when the app is ready 📲🎉</p>
+                    </div>
+                    <div class="span12">
+                      <!-- Begin Mailchimp Signup Form -->
+                      
+                      <div id="mc_embed_signup">
+                      <form action="https://gmail.us3.list-manage.com/subscribe/post?u=9fdce8c579404b5cd464d8b3b&amp;id=a96d1a6a3b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                          <div id="mc_embed_signup_scroll">
+                        
+                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email" required>
+                          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9fdce8c579404b5cd464d8b3b_a96d1a6a3b" tabindex="-1" value=""></div>
+                          <div class="clear"><input type="submit" value="Go !" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                          </div>
+                      </form>
+                      </div>
+
+                      <!--End mc_embed_signup-->
+         
+                    </div>
+                </div>
+          </div>
+        </div>
+        <div class="background-wrapper press-background-wrapper features-wrapper ">
           <div class="container">   
             <div class="row">
               <div class="span12 text-left">
                 <div class="row">
                   <div class="span12">
                     <h4>
-                        With <b>SplitCloud</b> Double Music Player use your headphones and listen to two different songs at once.
-                        <b>Play and discover</b> new music with access to <b>SoundCloud®</b> and your local Music Library.<br>
+                      <blockquote class='hero-link text-center'><i>The perfect app for sharing headphones and listening two different songs!</i></blockquote> 
                     </h4>
+                    <p>
+                        <b>SplitCloud</b> is a music player app that let's you play two different songs at once on your smartphone using headphones.<br>
+                        <b>Stream songs and discover</b> new music thanks to the <b>SoundCloud®</b> integration.<br>
+                        <b>Play all your songs</b> Splitcloud can access all the music saved on your phone.<br>
+                    </p>
                     <h4 class='text-center'>
-                        Get SplitCloud for free on the App Store!
+                       Get SplitCloud app for free!
                     </h4>
                     <br>
-                    <h4>
-                      <blockquote class='hero-link text-center'><i>The perfect app for sharing your headphones and listen two different songs!</i></blockquote> 
-                    </h4>
+                    
                   </div>
                 </div>
               </div>
@@ -110,7 +161,8 @@
                 </div>
             </div>
         </div>
-        <div class="press-background-wrapper">
+
+        <div class="background-wrapper ">
           <div class="container">
               <div class="row">
                   <div class="span12">
@@ -205,7 +257,14 @@
         <footer>
           <div class='container'>
             <div class="text-center">
-              <p>&copy; Giulio Dellorbo (egm0121@gmail.com) - <span class='copy-year'></span> - <a href="./privacy.html">Privacy Policy</a></p>
+              <p>Follow Splitcloud to stay updated!</p>
+              <a href="https://www.instagram.com/splitcloud_app/"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" /></a>
+              <a href="https://www.youtube.com/channel/UCGJsb1Zvw405xkgLGKHnadw/featured"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg" /></a>
+              <a href="https://twitter.com/SplitCloudApp"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg" /></a>
+            </div>
+            <div class="text-center">
+              <p>Made with 🧡 in NYC 🗽</p>
+              <p> &copy; Giulio Dellorbo <small>(splitcloudapp[@]gmail.com)</small> - <span class='copy-year'></span> - <a href="./privacy.html">Privacy Policy</a></p>
             </div>
           </div>
         </footer>
@@ -224,7 +283,15 @@
         function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
         loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
 
-        document.querySelector('footer p .copy-year').innerHTML += new Date().getFullYear();
+        document.querySelector('.copy-year').innerHTML += new Date().getFullYear();
+        var badgeIos = document.querySelector('.badge-ios');
+        var badgeAndroid = document.querySelector('.badge-android');
+        var isIOS = /^(iPhone|iPad|iPod)/.test(navigator.platform);
+        if(window.matchMedia('only screen and (max-width: 767px)').matches){
+          badgeIos.style.display = isIOS ? 'block':'none';
+          badgeAndroid.style.display = !isIOS ? 'block':'none';
+         
+        }
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script async src="./autotrack.custom.dist.js"></script>

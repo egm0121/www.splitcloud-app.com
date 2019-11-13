@@ -23,8 +23,10 @@
         <header>
           <div class="row">
             <div class="span10">
-            <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
-            <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              <a href="./">
+                <img src='./img/apple-icon.png' class='app-icon' alt='splitcloud App Icon'>
+                <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </a>
             </div>
           </div>
         </header>
@@ -153,12 +155,7 @@
 
 
                     <h2>Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                    <ul>
-                            <li>By email: egm0121@gmail.com</li>
-                    </ul>
-
-
+                    <p>If you have any questions about this Privacy Policy, please contact us via email at: splitcloudapp@gmail.com</p>
                   </div>
                 </div>
             </div>
@@ -166,7 +163,13 @@
         <footer>
           <div class='container'>
             <div class="text-center">
-              <p>&copy; Giulio Dellorbo (egm0121@gmail.com) - </p>
+              <p>Follow Splitcloud to stay updated!</p>
+              <a href="https://www.instagram.com/splitcloud_app/"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" /></a>
+              <a href="https://www.youtube.com/channel/UCGJsb1Zvw405xkgLGKHnadw/featured"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/youtube.svg" /></a>
+              <a href="https://twitter.com/SplitCloudApp"  class='social-link'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg" /></a>
+            </div>
+            <div class="text-center">
+              <p>&copy; Giulio Dellorbo (splitcloudapp@gmail.com) - <span class='copy-year'></span> - <a href="./privacy.html">Privacy Policy</a></p>
             </div>
           </div>
         </footer>
@@ -193,7 +196,7 @@
         function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
         loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
 
-        document.querySelector('footer p').innerHTML += new Date().getFullYear();
+        document.querySelector('.copy-year').innerHTML += new Date().getFullYear();
 
         window.addEventListener('load',function(){
           var intro = document.querySelector('#intro-iphone'),
