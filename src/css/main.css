@@ -101,15 +101,10 @@ ul li {
   font-weight: lighter;
 }
 .app-icon{
-  max-width: 140px;
-  position: relative;
-  top: -10px;
-	margin-right:25px;
-  border-radius : 70px;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  display: none;
 }
 .app-logo{
-  height:60px;
+  height: 90px;
 }
 .iphone {
   position: relative;
@@ -281,8 +276,8 @@ footer {
     border-radius:30px;
     margin-right: 10px;
   }
-  .app-logo{
-    height: 40px;
+  .app-logo {
+    height: 60px;
     position: relative;
     top: -8px;
   }

@@ -9,7 +9,7 @@
     "watch": "chokidar './src/css/main.css' -c 'npm run build-css'",
     "build": "npm run build-css && cp -R ./src/. ./dist",
     "prepare-bucket": "s3-website create www.splitcloud-app.com",
-    "deploy-s3": "s3-website deploy ./dist --exclude=app/* --exclude=charts/* -d www.splitcloud-app.com",
+    "deploy-s3": "s3-website deploy ./dist --exclude=app/* --exclude=charts/*  -d www.splitcloud-app.com",
     "deploy": "npm run build && npm run deploy-s3"
   },
   "repository": {
