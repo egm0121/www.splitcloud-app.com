@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
       body {
-        background: linear-gradient(to top, #0c83e4, #64b5f7);
+        background: linear-gradient(to top, #053d6a, #77d8f9);
         padding-top: 100px;
       }
       #playlist {
@@ -30,6 +30,14 @@
         white-space: nowrap;
         margin: 35px 0px;
         
+      }
+      #playlist h4 span {
+          font-size: 40px;
+          line-height: 20px;
+          bottom: -6px;
+          margin-right: 20px;
+          color: #a7dcf3;
+          position: relative;
       }
       #playlist img{
         width: 75px;
@@ -55,7 +63,7 @@
           </header>
         <div class="row">
           <div class="span12 text-center">
-            <h1>My Top Songs of 2019</h1>
+            <h1>My Top 5 Songs of 2019</h1>
             <div id="playlist"></div>
           </div>
         </div>
@@ -72,9 +80,9 @@
       fetch(`https://rest.splitcloud-app.com/wrapped/${year}/${id}/${side}`)
       .then(resp => resp.json()).then(data => {
           console.log('got data');
-          data.slice(0,5).map(item => {
+          data.slice(0,5).map((item, idx) => {
             const artwork = item.artwork_url || './img/empty_album.png'
-            $('#playlist').innerHTML += `<h4><img src="${artwork}"/>${item.title}</h4>`;  
+            $('#playlist').innerHTML += `<h4><span>${idx+1}</span><img src="${artwork}"/>${item.title}</h4>`;  
           });
       });
     </script>
