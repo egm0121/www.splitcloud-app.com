@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <title>SplitCloud Share</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <style>
+      body {
+        background: linear-gradient(to top, #053d6a, #77d8f9);
+        padding-top: 100px;
+      }
+
+      h1 {
+        font-size: 40px;
+        margin-bottom: 50px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+      .app-logo{
+        height:80px;
+      }
+      h4{
+        font-size: 35px;
+        line-height: 35px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;    
+        margin-left:25px;
+        margin-right: 25px;    
+      }
+      .trackTitle {
+        margin-top:35px;
+      }
+      .trackSubtitle {
+        font-size: 30px;
+        margin-top: 20px;
+        color: #a6c0ce;
+      }
+      #playlist {
+        margin-top: 30px;
+      }
+      #playlist img{
+        width: 90%;
+        /* height: 75px; */
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span10 text-center">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+
+              </div>
+              <div class="span2 download-badge padding-25">
+                <span class=""></span>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <div id="playlist"></div>
+          </div>
+        </div>
+      </div>
+    <script>
+      const $ = document.querySelector.bind(document);
+      document.addEventListener('DOMContentLoaded', () => { console.log('DOm loaded fired');});
+      window.addEventListener('load', () => { console.log('window loaded fired');});
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id') || '';
+      const scToken = urlParams.get('scToken') || 'Iy5e1Ri4GTNgrafaXe4mLpmJLXbXEfBR';
+      fetch(`https://api.soundcloud.com/tracks/${id}?client_id=${scToken}`)
+      .then(resp => resp.json()).then(data => {
+          console.log('got data');
+          $('#playlist').innerHTML += `<img src="${data.artwork_url.replace('large.jpg', 't500x500.jpg')}"/><h4 class="trackTitle">${data.title}</h4><h4 class="trackSubtitle">${data.user.username}</h4>`;  
+      });
+    </script>
+  </body>
+</html>
