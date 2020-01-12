@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <style>
       body {
-        background: linear-gradient(to top, #053d6a, #77d8f9);
+        background: linear-gradient(to top, #053d6a, #4acdfa);
         padding-top: 100px;
       }
 
@@ -31,11 +31,15 @@
         margin-right: 25px;    
       }
       .trackTitle {
-        margin-top:35px;
+        margin-top:20px;
+        font-size: 35px;
+        line-height: 45px;
+        margin-bottom: 5px;
       }
       .trackSubtitle {
         font-size: 30px;
-        margin-top: 20px;
+        line-height: 35px;
+        margin-top: 0px;
         color: #a6c0ce;
       }
       #playlist {
@@ -76,10 +80,24 @@
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id') || '';
       const scToken = urlParams.get('scToken') || 'Iy5e1Ri4GTNgrafaXe4mLpmJLXbXEfBR';
+      const TRACK_ARTIST_DELIMITER = ' - ';
+      function cleanText(s) {
+        return s.replace(/("|')/g, '').trim();
+      }
+      function getFormattedSCTrackAndArtist(t) {
+        const splitByDelimiter = t.title.split(TRACK_ARTIST_DELIMITER);
+        let trackName = cleanText(splitByDelimiter.slice(1).join(TRACK_ARTIST_DELIMITER));
+        let artistName = cleanText(splitByDelimiter[0]);
+        if (!trackName) {
+          trackName = artistName;
+          artistName = t.user.username;
+        }
+        return [trackName, artistName];
+      }
       fetch(`https://api.soundcloud.com/tracks/${id}?client_id=${scToken}`)
       .then(resp => resp.json()).then(data => {
-          console.log('got data');
-          $('#playlist').innerHTML += `<img src="${data.artwork_url.replace('large.jpg', 't500x500.jpg')}"/><h4 class="trackTitle">${data.title}</h4><h4 class="trackSubtitle">${data.user.username}</h4>`;  
+          const trackAndArtist = getFormattedSCTrackAndArtist(data);
+          $('#playlist').innerHTML += `<img src="${data.artwork_url.replace('large.jpg', 't500x500.jpg')}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
       });
     </script>
   </body>
