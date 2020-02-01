@@ -1,0 +1,130 @@
+<html>
+  <head>
+    <title>SplitCloud Giveaway!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: linear-gradient(to bottom, #053d6a, #4d8fd1);
+        padding-top: 50px;
+      }
+      #playlist {
+        text-align: left;
+      }
+      .app-logo{
+        height:65x;
+      }
+      h1 {
+        font-size: 30px;
+       
+        margin: 20px 0px;
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 16px;
+      }
+      #playlist .desc{
+        display:flex;
+        flex:5;
+      }
+      #playlist h4{
+       
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 300;
+      }
+      #playlist div {
+        display: flex;
+        flex-direction: row;
+      }
+      #playlist div span {
+        font-size: 40px;
+        line-height: 60px;
+        height: 80px;
+        color: #a7dcf3;
+        flex: 1;
+        text-align: center;
+      }
+      #playlist img{
+        width: 75px;
+        height: 75px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+      .cta-button{
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        flex:1;
+        height: 35px;
+        background-color: #c9b545;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 35px;
+        margin: 50px 0px;
+        padding: 10px 20px;
+        border-radius: 16px;
+        transition: background-color 0.5s linear;
+      }
+      .cta-button:hover {
+        background-color: #f2d847;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span10 text-center">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Promo-codes Giveaway</h1>
+            <h3>Participate and win a promo-code to remove all ads forever!</h3>
+            <h1>Instructions</h1>
+            <div id="playlist">
+                <div><span>1</span><div class='desc'><h4><b>Follow</b> us <i>@splitcloudapp</i> on Instagram</h4></div></div>
+                <div><span>2</span><div class='desc'><h4><b>Like</b> our latest post</h4></div></div>
+                <div><span>3</span><div class='desc'><h4><b>Tag</b> friends who should know about SplitCloud in the comments</h4></div></div>
+                <div><span>🎉</span><div class='desc'><h4><b>The winners will be chosen randomly at the end of the promotion!</b></h4></div></div>
+            </div>
+            <div class="cta-button" >Let's Go!</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span10">
+          <h3>Terms & Conditions</h3>
+          <p>The giveaway will end on Feb 16 2020.</p> 
+          <p>
+            Winners will be selected at random and contacted privately via direct message
+          </p>
+          <p>
+            Per Instagram rules, this promotion is in no way sponsored, administered, or associated with Instagram, Inc. By entering, entrants confirm that they are 13+ years of age, release Instagram of responsibility, and agree to Instagram’s terms of use.
+          </p>
+          </div>
+        </div>
+      </div>
+    <script>
+      const $ = document.querySelector.bind(document);
+      document.addEventListener('DOMContentLoaded', () => { console.log('DOm loaded fired');});
+      $('.cta-button').addEventListener('click', () => { window.location ='https://www.instagram.com/splitcloud_app'; });
+      /*!
+        loadCSS: load a CSS file asynchronously.
+        [c]2014 @scottjehl, Filament Group, Inc.
+        Licensed MIT
+        */
+        function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
+        loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+    </script>
+  </body>
+</html>

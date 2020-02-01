@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" href="css/dist.css?v=15" />
     <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
     <style>
       body {
         background: linear-gradient(to top, #053d6a, #4acdfa);
@@ -99,6 +100,13 @@
           const trackAndArtist = getFormattedSCTrackAndArtist(data);
           $('#playlist').innerHTML += `<img src="${data.artwork_url.replace('large.jpg', 't500x500.jpg')}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
       });
+      /*!
+      loadCSS: load a CSS file asynchronously.
+      [c]2014 @scottjehl, Filament Group, Inc.
+      Licensed MIT
+      */
+      function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
+      loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
     </script>
   </body>
 </html>
