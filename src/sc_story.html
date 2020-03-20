@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <style>
       body {
-        background: linear-gradient(to top, #053d6a, #4acdfa);
+        background: linear-gradient(to bottom, #00d2ff, #1f5093);
         padding-top: 100px;
       }
 
@@ -32,16 +32,16 @@
         margin-right: 25px;    
       }
       .trackTitle {
-        margin-top:20px;
+        margin-top: 30px;
         font-size: 30px;
         line-height: 35px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
       }
       .trackSubtitle {
         font-size: 25px;
         line-height: 30px;
         margin-top: 0px;
-        color: #a6c0ce;
+        color:rgba(255, 255, 255, 0.7);
       }
       #playlist {
         margin-top: 30px;
@@ -50,7 +50,7 @@
         width: 90%;
         /* height: 75px; */
         border-radius: 10px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 20px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px;
       }
     </style>
   </head>
@@ -76,11 +76,11 @@
       </div>
     <script>
       const $ = document.querySelector.bind(document);
-      document.addEventListener('DOMContentLoaded', () => { console.log('DOm loaded fired');});
+      document.addEventListener('DOMContentLoaded', () => { console.log('DOM loaded fired');});
       window.addEventListener('load', () => { console.log('window loaded fired');});
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id') || '';
-      const scToken = urlParams.get('scToken') || 'Iy5e1Ri4GTNgrafaXe4mLpmJLXbXEfBR';
+      const scToken = urlParams.get('scToken') || '66b598e554ce0083e7c7b55e983062b0';
       const TRACK_ARTIST_DELIMITER = ' - ';
       function cleanText(s) {
         return s.replace(/("|')/g, '').trim();
