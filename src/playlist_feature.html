@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <title>SplitCloud Giveaway!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: linear-gradient(to bottom, #053d6a, #4d8fd1);
+        padding-top: 50px;
+      }
+      #playlist {
+        text-align: center;
+      }
+      .app-logo{
+        height:65x;
+      }
+      h1 {
+        font-size: 30px;
+       
+        margin: 20px 0px;
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 16px;
+      }
+      #playlist .desc{
+        display:flex;
+        flex:5;
+      }
+      #playlist h4{
+        font-size: 22px;
+        line-height: 60px;
+        font-weight: 300;
+      }
+      #playlist div {
+        display: flex;
+        flex-direction: row;
+      }
+      #playlist div span {
+        font-size: 40px;
+        color: #a7dcf3;
+        display: flex;
+        justify-content: center;
+        width:40px;
+        align-items: center;
+      }
+      #playlist img{
+        width: auto;
+        margin-right: 20px;
+        border-radius: 10px;
+        margin: 20px 0px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span10 text-center">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Introducing Playlists!</h1>
+            <h3>You can now create multiple playlists in splitcloud, this is how:</h3>
+            <div id="playlist">
+                <div><span>1</span><div class='desc'><h4><b>Create</b> a new playlist</h4></div></div>
+                <img src="./img/playlist/step1.png" />
+                <img src="./img/playlist/step2.png" />
+                <div><span>2</span><div class='desc'><h4><b>Add Songs</b> to your playlist</h4></div></div>
+                <img src="./img/playlist/step3.png" />
+                <img src="./img/playlist/step4.png" />
+                <div><span>🎉</span><div class='desc'><h4><b>Listen</b> to your new playlist</h4></div></div>
+                <img src="./img/playlist/step5.png" />
+                <img src="./img/playlist/step6.png" />
+                <div><span>📲</span><div class='desc'><h4><b>Playlist work offline</b> by default!</h4></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script>
+        /*GA tracking*/
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+       ga('create', 'UA-100899493-1', 'auto');
+       ga('send', 'pageview');
+       ga('require', 'outboundLinkTracker');
+      /*!
+        loadCSS: load a CSS file asynchronously.
+        [c]2014 @scottjehl, Filament Group, Inc.
+        Licensed MIT
+        */
+        function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
+        loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+  </body>
+</html>
