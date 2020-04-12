@@ -1,0 +1,137 @@
+<html>
+  <head>
+    <title>Follow SplitCloud!</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: linear-gradient(to top, #053d6a, #4d8fd1);
+        padding-top: 50px;
+      }
+      #playlist {
+        text-align: left;
+      }
+      .app-logo{
+        height:65x;
+      }
+      h1 {
+        font-size: 30px;
+       
+        margin: 20px 0px;
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 16px;
+      }
+      #playlist .desc{
+        display:flex;
+        flex:5;
+      }
+      #playlist h4{
+       
+        font-size: 22px;
+        line-height: 28px;
+        font-weight: 300;
+      }
+      #playlist div {
+        display: flex;
+        flex-direction: row;
+      }
+      #playlist div span {
+        font-size: 40px;
+        line-height: 60px;
+        height: 80px;
+        color: #a7dcf3;
+        flex: 1;
+        text-align: center;
+      }
+      #playlist img{
+        width: 75px;
+        height: 75px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+      .cta-button {
+        position: relative;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        flex:1;
+        height: 35px;
+        background-color: #c9b545;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 35px;
+        margin: 50px 0px;
+        padding: 15px 20px;
+        border-radius: 16px;
+        transition: background-color 0.5s linear;
+        box-shadow: inset 0px 0px 1px 2px #ffffff3d;
+      }
+      .cta-button:hover {
+        background-color: #f2d847;
+      }
+      .invert-icon {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+        position: absolute;
+        left: 15px;
+        top: 15px;
+      }
+      .link-instagram {
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+      }
+      .link-tiktok {
+        background: linear-gradient(45deg, rgba(56,242,234,1) 4%, rgba(250,34,78,1) 20%, rgba(9,9,9,1) 30%);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span12 text-center">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Follow Us on our socials!</h1>
+            <h4>Discover new updates and promotions!</h4>
+            <div class="cta-button link-tiktok" >
+              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg" />
+              Follow on Tik Tok</div>
+            <div class="cta-button link-instagram" >
+              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" />
+              Follow on Instagram</div>
+          </div>
+        </div>
+      </div>
+    <script>
+        /*GA tracking*/
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+       ga('create', 'UA-100899493-1', 'auto');
+       ga('send', 'pageview');
+       ga('require', 'outboundLinkTracker');
+      const $ = document.querySelector.bind(document);
+      $('.link-instagram').addEventListener('click', () => { window.location = 'instagram://user?username=splitcloud_app'; });
+      $('.link-tiktok').addEventListener('click', () => { window.location = 'https://www.tiktok.com/@splitcloudapp'; });
+      /*!
+        loadCSS: load a CSS file asynchronously.
+        [c]2014 @scottjehl, Filament Group, Inc.
+        Licensed MIT
+        */
+        function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
+        loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+  </body>
+</html>
