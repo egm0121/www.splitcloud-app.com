@@ -225,6 +225,16 @@ footer {
   background-color: #006EB2;
   font-size: 20px; 
 }
+.more-menu{
+  transform: rotate(90deg);
+  position: relative;
+  display: inline-block;
+  font-size: 35px;
+  line-height: 10px;
+  /* margin: 10px 10px; */
+  top: 7px;
+  left: 13px;
+}
 .social-link img {
   filter: invert(1);
   opacity: 0.8;
@@ -319,6 +329,7 @@ footer {
     font-size: 16px;
   }
 }
+
 @media only screen and (min-width: 768px){
 	html{
 	  height: 2100px;

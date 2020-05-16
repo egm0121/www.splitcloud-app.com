@@ -90,6 +90,16 @@
       .link-tiktok {
         background: linear-gradient(45deg, rgba(56,242,234,1) 4%, rgba(250,34,78,1) 20%, rgba(9,9,9,1) 30%);
       }
+      .promo-container{
+        padding: 50px 0px;
+      }
+      .promo-label{
+        border-radius: 10px;
+        background: linear-gradient(90deg, #b11e04 0%, rgba(253,29,29,1) 100%);
+        padding: 20px;
+        font-size: 30px;
+        font-weight: 600;
+      }
     </style>
   </head>
   <body>
@@ -103,15 +113,21 @@
             </div>
           </header>
         <div class="row">
+          <div class='span12 text-center promo-container'> <span class="promo-label">Promotion</span></div>
           <div class="span12 text-center">
-            <h1>Follow our socials</h1>
-            <h3>Discover new updates<br> and promotions!</h3>
-            <div class="cta-button link-tiktok" >
-              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg" />
-              Tik Tok</div>
-            <div class="cta-button link-instagram" >
-              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" />
-              Instagram</div>
+            <h1>Remove Ads 50% OFF!</h1>
+            <h3>
+              For a limited time remove all ads from the app for 
+              45 INR
+            </h3>
+          </div>
+          <div class="span12 text-center">
+            <h1>How to remove ads:</h1>
+            <div id="playlist">
+                <div><span>1</span><div class='desc'><h4><b>Open</b> the <span class="more-menu">...</span> menu</h4></div></div>
+                <div><span>2</span><div class='desc'><h4><b>Press</b> "Remove All Ads"</h4></div></div>
+                <div><span>🎉</span><div class='desc'><h4><b>Enjoy</b> SplitCloud ad-free!</h4></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -121,9 +137,6 @@
        ga('create', 'UA-100899493-1', 'auto');
        ga('send', 'pageview');
        ga('require', 'outboundLinkTracker');
-      const $ = document.querySelector.bind(document);
-      $('.link-instagram').addEventListener('click', () => { window.location = 'instagram://user?username=splitcloud_app'; });
-      $('.link-tiktok').addEventListener('click', () => { window.location = 'https://www.tiktok.com/@splitcloudapp'; });
       /*!
         loadCSS: load a CSS file asynchronously.
         [c]2014 @scottjehl, Filament Group, Inc.
@@ -133,6 +146,5 @@
         loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="./autotrack.custom.dist.js"></script>
   </body>
 </html>
