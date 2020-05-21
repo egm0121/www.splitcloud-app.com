@@ -122,21 +122,24 @@
        ga('send', 'pageview');
        ga('require', 'outboundLinkTracker');
       const $ = document.querySelector.bind(document);
-      const sendShareEvent = (label) => {
+      const sendShareEvent = (label, cb) => {
         ga('send', {
           hitType: 'event',
           eventCategory: 'link',
           eventAction: 'share-link',
-          eventLabel: label
+          eventLabel: label,
+          hitCallback: cb
         });
       }
       $('.link-instagram').addEventListener('click', () => { 
-        sendShareEvent('instagram');
-        window.location = 'instagram://user?username=splitcloud_app'; 
+        sendShareEvent('instagram',() => {
+          window.location = 'instagram://user?username=splitcloud_app'; 
+        });
       });
       $('.link-tiktok').addEventListener('click', () => { 
-        sendShareEvent('tiktok');
-        window.location = 'https://www.tiktok.com/@splitcloudapp';
+        sendShareEvent('tiktok',() => {
+          window.location = 'https://www.tiktok.com/@splitcloudapp';
+        });
       });
       /*!
         loadCSS: load a CSS file asynchronously.
