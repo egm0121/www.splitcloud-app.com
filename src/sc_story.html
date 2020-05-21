@@ -76,8 +76,6 @@
       </div>
     <script>
       const $ = document.querySelector.bind(document);
-      document.addEventListener('DOMContentLoaded', () => { console.log('DOM loaded fired');});
-      window.addEventListener('load', () => { console.log('window loaded fired');});
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id') || '';
       const scToken = urlParams.get('scToken') || '66b598e554ce0083e7c7b55e983062b0';
@@ -100,13 +98,13 @@
           const trackAndArtist = getFormattedSCTrackAndArtist(data);
           $('#playlist').innerHTML += `<img src="${data.artwork_url.replace('large.jpg', 't500x500.jpg')}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
       });
-      /*!
-      loadCSS: load a CSS file asynchronously.
-      [c]2014 @scottjehl, Filament Group, Inc.
-      Licensed MIT
-      */
       function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
       loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+       /*GA tracking*/
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-100899493-1', 'auto');
+      ga('send', 'pageview');
     </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
   </body>
 </html>
