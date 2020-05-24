@@ -105,13 +105,16 @@
         <div class="row">
           <div class="span12 text-center">
             <h1>Follow our socials</h1>
-            <h3>Discover new updates<br> and promotions!</h3>
+            <h3>
+              Get updates about new features,
+              <br>
+              giveaways and promotions!</h3>
             <div class="cta-button link-tiktok" >
               <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg" />
-              Tik Tok</div>
+              on Tik Tok</div>
             <div class="cta-button link-instagram" >
               <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" />
-              Instagram</div>
+              on Instagram</div>
           </div>
         </div>
       </div>
@@ -120,26 +123,24 @@
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
        ga('create', 'UA-100899493-1', 'auto');
        ga('send', 'pageview');
-       ga('require', 'outboundLinkTracker');
+       ga('set', 'transport', 'beacon');
+
       const $ = document.querySelector.bind(document);
-      const sendShareEvent = (label, cb) => {
+      const sendShareEvent = (label) => {
         ga('send', {
           hitType: 'event',
           eventCategory: 'link',
           eventAction: 'share-link',
           eventLabel: label,
-          hitCallback: cb
         });
       }
       $('.link-instagram').addEventListener('click', () => { 
-        sendShareEvent('instagram',() => {
-          window.location = 'instagram://user?username=splitcloud_app'; 
-        });
+        sendShareEvent('instagram')
+        window.location = 'instagram://user?username=splitcloud_app'; 
       });
       $('.link-tiktok').addEventListener('click', () => { 
-        sendShareEvent('tiktok',() => {
-          window.location = 'https://www.tiktok.com/@splitcloudapp';
-        });
+        sendShareEvent('tiktok');
+        window.location = 'https://www.tiktok.com/@splitcloudapp';
       });
       /*!
         loadCSS: load a CSS file asynchronously.
@@ -150,6 +151,5 @@
         loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
     </script>
     <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <script async src="./autotrack.custom.dist.js"></script>
   </body>
 </html>
