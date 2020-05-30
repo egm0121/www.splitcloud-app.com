@@ -11,9 +11,6 @@
         background: linear-gradient(to bottom, #00d2ff, #1f5093);
         padding-top: 100px;
         padding-top: 100px;
-        background-size: cover;
-        background-position: center center;
-        backdrop-filter: blur(10px) brightness(0.7);
       }
 
       h1 {
@@ -23,7 +20,7 @@
         font-weight: 600;
       }
       .app-logo{
-        height:60px;
+        height:70px;
       }
       h4{
         font-size: 35px;
@@ -47,8 +44,11 @@
         margin-top: 0px;
         color:rgba(255, 255, 255, 0.7);
       }
-      #playlist {
+      .container {
         position:relative;
+        z-index:3;
+      }
+      #playlist {
         margin-top: 30px;
       }
       #playlist img{
@@ -58,16 +58,29 @@
         box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px;
       }
       #dropshadow {
-        position: absolute;
+        position: fixed;
         bottom: 0px;
         width: 100%;
         height: 100%;
         background: linear-gradient(0deg, #0f0f0f 25%, transparent);
-        z-index: 0;
+        z-index: 1;
+      }
+      #bg_blur{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        z-index:0;
+        background-size: cover;
+        background-position: center center;
+        filter: blur(5px) brightness(0.7);
+        transform: scale(1.05);
       }
     </style>
   </head>
   <body>
+    <div id='bg_blur'> </div>
     <div id='dropshadow'> </div>
     <div class="container">
         <header>
@@ -110,7 +123,7 @@
       .then(resp => resp.json()).then(data => {
           const artwork = data.artwork_url.replace('large.jpg', 't500x500.jpg');
           const trackAndArtist = getFormattedSCTrackAndArtist(data);
-          document.body.style.backgroundImage = `url('${artwork}')`;
+          $('#bg_blur').style.backgroundImage = `url('${artwork}')`;
           $('#playlist').innerHTML += `<img src="${artwork}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
       });
       function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
