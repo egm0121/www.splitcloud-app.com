@@ -121,7 +121,12 @@
       }
       fetch(`https://api.soundcloud.com/tracks/${id}?client_id=${scToken}`)
       .then(resp => resp.json()).then(data => {
-          const artwork = data.artwork_url.replace('large.jpg', 't500x500.jpg');
+          let artwork = data.artwork_url;
+          if (artwork) {
+            artwork = artwork.replace('large.jpg', 't500x500.jpg');
+          } else {
+            artwork = './img/empty_album_alt.png'
+          }
           const trackAndArtist = getFormattedSCTrackAndArtist(data);
           $('#bg_blur').style.backgroundImage = `url('${artwork}')`;
           $('#playlist').innerHTML += `<img src="${artwork}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
