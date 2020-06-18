@@ -60,6 +60,7 @@
         border-radius: 10px;
       }
       .cta-button {
+        display: block;
         position: relative;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         flex:1;
@@ -108,9 +109,9 @@
             <h3>
               Win a <b>✨Remove Ads✨</b> promocode
               and get the news about SplitCloud!</h3>
-            <div class="cta-button link-tiktok" >
+            <a class="cta-button link-tiktok" href='https://www.tiktok.com/@splitcloudapp'>
               <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg" />
-              <small>go to</small> Tik Tok</div>
+              <small>go to</small> Tik Tok</a>
             <div class="cta-button link-instagram" >
               <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" />
               <small>go to</small> Instagram</div>
@@ -137,9 +138,9 @@
         sendShareEvent('instagram')
         window.location = 'instagram://user?username=splitcloud_app'; 
       });
-      $('.link-tiktok').addEventListener('click', () => { 
+      $('.link-tiktok').addEventListener('touchstart', () => { 
+        console.log('a');
         sendShareEvent('tiktok');
-        window.location = 'https://www.tiktok.com/@splitcloudapp';
       });
       /*!
         loadCSS: load a CSS file asynchronously.
