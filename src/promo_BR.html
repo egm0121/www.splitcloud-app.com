@@ -25,7 +25,7 @@
       }
       h3 {
         font-size: 22px;
-        line-height: 35px;
+        line-height: 28px;
         font-weight: 400;
       }
       p {
@@ -90,6 +90,23 @@
       .link-tiktok {
         background: linear-gradient(45deg, rgba(56,242,234,1) 4%, rgba(250,34,78,1) 20%, rgba(9,9,9,1) 30%);
       }
+      .promo-container{
+        padding: 50px 0px;
+      }
+      .promo-label{
+        border-radius: 10px;
+        background: linear-gradient(90deg, #b11e04 0%, rgba(253,29,29,1) 100%);
+        padding: 20px;
+        font-size: 30px;
+        font-weight: 600;
+      }
+      .more-inline{
+        display: inline-block;
+        transform: rotate(90deg)translateY(-6px);
+        transform-origin: bottom;
+        font-size: 35px;
+        line-height: 10px;
+      }
     </style>
   </head>
   <body>
@@ -103,18 +120,20 @@
             </div>
           </header>
         <div class="row">
+          <div class='span12 text-center promo-container'> <span class="promo-label">Promotion</span></div>
           <div class="span12 text-center">
-            <h1>Follow our socials</h1>
+            <h1>Remove Ads 50% OFF!</h1>
             <h3>
-              Get updates about new features,
-              <br>
-              giveaways and promotions!</h3>
-            <div class="cta-button link-tiktok" >
-              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/tiktok.svg" />
-              on Tik Tok</div>
-            <div class="cta-button link-instagram" >
-              <img height="32" width="32" class="invert-icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/instagram.svg" />
-              on Instagram</div>
+              For a limited time remove all ads forever for 50% less!
+            </h3>
+          </div>
+          <div class="span12 text-center">
+            <h1>How to remove ads:</h1>
+            <div id="playlist">
+                <div><span>1</span><div class='desc'><h4><b>Open</b> the <b class="more-inline">...</b> menu</h4></div></div>
+                <div><span>2</span><div class='desc'><h4><b>Press</b> "Remove All Ads"</h4></div></div>
+                <div><span>🎉</span><div class='desc'><h4><b>Enjoy</b> SplitCloud ad-free!</h4></div></div>
+            </div>
           </div>
         </div>
       </div>
@@ -123,25 +142,7 @@
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
        ga('create', 'UA-100899493-1', 'auto');
        ga('send', 'pageview');
-       ga('set', 'transport', 'beacon');
-
-      const $ = document.querySelector.bind(document);
-      const sendShareEvent = (label) => {
-        ga('send', {
-          hitType: 'event',
-          eventCategory: 'link',
-          eventAction: 'share-link',
-          eventLabel: label,
-        });
-      }
-      $('.link-instagram').addEventListener('click', () => { 
-        sendShareEvent('instagram')
-        window.location = 'instagram://user?username=splitcloud_app'; 
-      });
-      $('.link-tiktok').addEventListener('click', () => { 
-        sendShareEvent('tiktok');
-        window.location = 'https://www.tiktok.com/@splitcloudapp';
-      });
+       ga('require', 'outboundLinkTracker');
       /*!
         loadCSS: load a CSS file asynchronously.
         [c]2014 @scottjehl, Filament Group, Inc.
