@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <title>SplitCloud Trending Post Generator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      html {
+        font-size: 100px;
+        height: 100%;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+      }
+      body {
+        background: linear-gradient(to top, #01213b, #006fbb);
+        color:white;
+        height:100%;
+      }
+      #playlist {
+        text-align: left;
+      }
+      .app-logo {
+          height: 100px;
+      }
+      header {
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+      h1 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0.3rem 0;
+        margin-top: 0.7rem;
+      }
+      #playlist h4{
+        font-size: 0.6rem;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0px 0px;
+        line-height:  0.6rem;
+        color:white;
+      }
+      #playlist div > span {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          bottom: -6px;
+          margin-right: 20px;
+          color: #a7dcf3;
+          position: relative;
+      }
+      #playlist img{
+        min-width: 150px;
+        width: 150px;
+        height: 150px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+      #playlist .trackContainer {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0.4rem 0;
+      }
+      #playlist .trackInfo{
+        display:flex;
+        flex-direction: column;
+      }
+      #playlist .trackSubtitle{
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.5rem;
+      }
+      .country {
+        position: absolute;
+        top: 80px;
+        right: 60px;
+        font-size: 0.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span12">
+                <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+                <span class="country text-right">US 🇺🇸</span>
+              </div>
+            </div>
+        </header>
+        <div class="row">
+          <div class="span12">
+            <h1>Trending this week</h1>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <div id="playlist"></div>
+          </div>
+        </div>
+      </div>
+    <script src='./js/helpers.js'></script>
+    <script>
+      splitcloud.helpers.loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+      const countryMap = {
+        'US': '🇺🇸',
+        'IN': '🇮🇳',
+        'MX': '🇲🇽',
+        'TH': '🇹🇭',
+        'BR': '🇧🇷',
+      };
+      const $ = document.querySelector.bind(document);
+      document.addEventListener('DOMContentLoaded', () => { console.log('DOm loaded fired');});
+      window.addEventListener('load', () => { console.log('window loaded fired');});
+      const urlParams = new URLSearchParams(window.location.search);
+      const country = (urlParams.get('region') || 'US').toUpperCase();
+      $('.country').innerHTML = `${country} ${countryMap[country]}`
+      fetch(`https://rest.splitcloud-app.com/charts?kind=trending&region=${country}&appVersion=5.7`)
+      .then(resp => resp.json()).then(data => {
+          console.log('got data');
+          data.slice(0,5).map((item, idx) => {
+            const artwork = item.artwork_url || './img/empty_album.png';
+            const [trackTitle, trackArtist] = splitcloud.helpers.getFormattedSCTrackAndArtist(item);
+            $('#playlist').innerHTML += `<div class="trackContainer"><img src="${artwork}"/><div class="trackInfo"><h4 class="trackTitle">${trackTitle}</h4><h4 class="trackSubtitle">${trackArtist}</h4></div></div>`;  
+          });
+      });
+    </script>
+  </body>
+</html>
