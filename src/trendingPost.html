@@ -67,6 +67,7 @@
       #playlist .trackInfo{
         display:flex;
         flex-direction: column;
+        width: 80%;
       }
       #playlist .trackTitle{
         font-size: 0.5rem;
@@ -78,9 +79,13 @@
       }
       .country {
         position: absolute;
-        top: 80px;
+        top: 65px;
         right: 60px;
         font-size: 0.7rem;
+      }
+      .country img {
+        top: -6px;
+        position: relative;
       }
     </style>
   </head>
@@ -91,7 +96,7 @@
             <div class="row">
               <div class="span12">
                 <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
-                <span class="country text-right">US 🇺🇸</span>
+                <span class="country text-right"><span>US</span> <img src="https://www.countryflags.io/us/flat/64.png"></span>
               </div>
             </div>
         </header>
@@ -122,7 +127,8 @@
       window.addEventListener('load', () => { console.log('window loaded fired');});
       const urlParams = new URLSearchParams(window.location.search);
       const country = (urlParams.get('region') || 'US').toUpperCase();
-      $('.country').innerHTML = `${country} ${countryMap[country]}`
+      $('.country > span').innerText = `${country}`;
+      $('.country img').src = `https://www.countryflags.io/${country}/flat/64.png`;
       fetch(`https://rest.splitcloud-app.com/charts?kind=trending&region=${country}&appVersion=5.7`)
       .then(resp => resp.json()).then(data => {
           console.log('got data');
