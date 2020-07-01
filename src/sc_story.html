@@ -100,40 +100,21 @@
           </div>
         </div>
       </div>
+    <script src='./js/helpers.js'></script>
     <script>
+      splitcloud.helpers.loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
       const $ = document.querySelector.bind(document);
       const urlParams = new URLSearchParams(window.location.search);
       const id = urlParams.get('id') || '';
       const scToken = urlParams.get('scToken') || '66b598e554ce0083e7c7b55e983062b0';
-      const TRACK_ARTIST_DELIMITER = ' - ';
-      function cleanText(s) {
-        return s.replace(/("|')/g, '').trim();
-      }
-      function getFormattedSCTrackAndArtist(t) {
-        const splitByDelimiter = t.title.split(TRACK_ARTIST_DELIMITER);
-        let trackName = cleanText(splitByDelimiter.slice(1).join(TRACK_ARTIST_DELIMITER));
-        let artistName = cleanText(splitByDelimiter[0]);
-        if (!trackName) {
-          trackName = artistName;
-          artistName = t.user.username;
-        }
-        return [trackName, artistName];
-      }
       fetch(`https://api.soundcloud.com/tracks/${id}?client_id=${scToken}`)
       .then(resp => resp.json()).then(data => {
-          let artwork = data.artwork_url;
-          if (artwork) {
-            artwork = artwork.replace('large.jpg', 't500x500.jpg');
-          } else {
-            artwork = './img/empty_album_alt.png'
-          }
-          const trackAndArtist = getFormattedSCTrackAndArtist(data);
+          let artwork = data && data.artwork_url ? data.artwork_url.replace('large.jpg', 't500x500.jpg') : './img/empty_album_alt.png';
+          const trackAndArtist = splitcloud.helpers.getFormattedSCTrackAndArtist(data);
           $('#bg_blur').style.backgroundImage = `url('${artwork}')`;
           $('#playlist').innerHTML += `<img src="${artwork}"/><h4 class="trackTitle">${trackAndArtist[0]}</h4><h4 class="trackSubtitle">${trackAndArtist[1]}</h4>`;  
       });
-      function loadCSS(e,t,n,o){"use strict";function r(){for(var t,o=0;o<l.length;o++)l[o].href&&l[o].href.indexOf(e)>-1&&(t=!0);t?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",i.onload=o||function(){},d.parentNode.insertBefore(i,d),r(),i}
-      loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
-       /*GA tracking*/
+      /*GA tracking*/
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', 'UA-100899493-1', 'auto');
       ga('send', 'pageview');

@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Splitcloud - Trending this week</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      body {
+        background: linear-gradient(to bottom, #053d6a, #4d8fd1);
+        padding-top: 50px;
+      }
+      #playlist img{
+        width: auto;
+        margin-right: 20px;
+        border-radius: 10px;
+        margin: 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span12 text-center">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </div>
+            </div>
+          </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Trending songs this week:</h1>
+            <div id="playlist">
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="./js/helpers.js"></script>
+    <script>  
+      splitcloud.helpers.loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+      const playlist = document.querySelector('#playlist');
+      ['US', 'IN', 'TH', 'BR', 'MX'].forEach(countryCode => {
+        playlist.innerHTML += `<img src="http://www.splitcloud-app.com/posts/trending/country_${countryCode}.png" />`
+      });
+    </script>
+  </body>
+</html>

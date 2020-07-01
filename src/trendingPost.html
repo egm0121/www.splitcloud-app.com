@@ -115,27 +115,24 @@
     <script src='./js/helpers.js'></script>
     <script>
       splitcloud.helpers.loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
-      const countryMap = {
-        'US': '🇺🇸',
-        'IN': '🇮🇳',
-        'MX': '🇲🇽',
-        'TH': '🇹🇭',
-        'BR': '🇧🇷',
-      };
       const $ = document.querySelector.bind(document);
-      document.addEventListener('DOMContentLoaded', () => { console.log('DOm loaded fired');});
-      window.addEventListener('load', () => { console.log('window loaded fired');});
       const urlParams = new URLSearchParams(window.location.search);
       const country = (urlParams.get('region') || 'US').toUpperCase();
       $('.country > span').innerText = `${country}`;
       $('.country img').src = `https://www.countryflags.io/${country}/flat/64.png`;
       fetch(`https://rest.splitcloud-app.com/charts?kind=trending&region=${country}&appVersion=5.7`)
       .then(resp => resp.json()).then(data => {
-          console.log('got data');
           data.slice(0,5).map((item, idx) => {
             const artwork = item.artwork_url || './img/empty_album.png';
             const [trackTitle, trackArtist] = splitcloud.helpers.getFormattedSCTrackAndArtist(item);
-            $('#playlist').innerHTML += `<div class="trackContainer"><img src="${artwork}"/><div class="trackInfo"><h4 class="trackTitle">${trackTitle}</h4><h4 class="trackSubtitle">${trackArtist}</h4></div></div>`;  
+            $('#playlist').innerHTML += `
+            <div class="trackContainer">
+              <img src="${artwork}"/>
+              <div class="trackInfo">
+                <h4 class="trackTitle">${trackTitle}</h4>
+                <h4 class="trackSubtitle">${trackArtist}</h4>
+              </div>
+            </div>`;  
           });
       });
     </script>
