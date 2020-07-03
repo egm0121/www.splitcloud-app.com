@@ -120,7 +120,7 @@
       const country = (urlParams.get('region') || 'US').toUpperCase();
       $('.country > span').innerText = `${country}`;
       $('.country img').src = `https://www.countryflags.io/${country}/flat/64.png`;
-      fetch(`https://rest.splitcloud-app.com/charts?kind=trending&region=${country}&appVersion=5.7`)
+      fetch(`https://rest.splitcloud-app.com/charts?kind=trending&region=${country}&appVersion=9.0`)
       .then(resp => resp.json()).then(data => {
           data.slice(0,5).map((item, idx) => {
             const artwork = item.artwork_url || './img/empty_album.png';
