@@ -102,8 +102,7 @@
         </header>
         <div class="row">
           <div class="span12">
-            <h1>Trending this week</h1>
-            
+            <h1></h1>
           </div>
         </div>
         <div class="row">
@@ -119,6 +118,7 @@
       const urlParams = new URLSearchParams(window.location.search);
       const country = (urlParams.get('region') || 'US').toUpperCase();
       const chartKind = urlParams.get('kind') || 'trending';
+      $('h1').innerText = `${chartKind === 'trending' ? `Trending`: `Popular`} this week`;
       $('.country > span').innerText = `${country}`;
       $('.country img').src = `https://www.countryflags.io/${country}/flat/64.png`;
       fetch(`https://rest.splitcloud-app.com/charts?kind=${chartKind}&region=${country}&appVersion=9.0`)
