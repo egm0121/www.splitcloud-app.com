@@ -17,28 +17,18 @@
       h1 {
         font-size: 45px;
         margin-bottom: 50px;
-        margin-top: 20px;
+        margin-top: 50px;
         font-weight: 600;
       }
       #playlist h4 {
-        font-size: 25px;
+        font-size: 30px;
         line-height: 80px;
         height: 80px;
         font-weight: 600;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        margin: 35px 0px;
-        
-      }
-      #playlist h4 span {
-          font-size: 50px;
-          line-height: 20px;
-          bottom: -12px;
-          margin-right: 20px;
-          color: rgba(255,255,255,0.5);
-          font-weight: 300;
-          position: relative;
+        margin: 35px 20px;
       }
       #playlist img{
         width: 75px;
@@ -53,18 +43,14 @@
     <div class="container">
         <header>
             <div class="row">
-              <div class="span10">
-              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
-
-              </div>
-              <div class="span2 download-badge padding-25">
-                <span class=""></span>
+              <div class="span12 text-center">
+                <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
               </div>
             </div>
           </header>
         <div class="row">
           <div class="span12 text-center">
-            <h1 class="title">My Top songs in</h1>
+            <h1 class="title"></h1>
             <div id="playlist"></div>
           </div>
         </div>
@@ -80,13 +66,14 @@
       const id = urlParams.get('id') || '';
       const side = urlParams.get('side') || '';
       const year = urlParams.get('year') || '';
-      $('.title').innerText = `My ${year} Top Songs`;
+      $('.title').innerText = `My ${year} Wrapped`;
       fetch(`https://rest.splitcloud-app.com/wrapped/${year}/${id}/${side}`)
       .then(resp => resp.json()).then(data => {
           console.log('got data');
           data.slice(0,5).map((item, idx) => {
-            const artwork = item.artwork_url || './img/empty_album.png'
-            $('#playlist').innerHTML += `<h4><span>${idx+1}</span><img src="${artwork}"/>${item.title}</h4>`;  
+            const artwork = item.artwork_url || './img/empty_album.png';
+            const [trackTitle, trackArtist] = splitcloud.helpers.getFormattedSCTrackAndArtist(item);
+            $('#playlist').innerHTML += `<h4><img src="${artwork}"/>${trackTitle} - ${trackArtist}</h4>`;  
           });
       });
     </script>
