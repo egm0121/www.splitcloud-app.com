@@ -44,7 +44,7 @@
       fetch(`https://rest.splitcloud-app.com/posts/regions?appVersion=9.0`)
       .then(resp => resp.json()).then(countryCodesList => {
         countryCodesList.forEach(countryCode => {
-          playlist.innerHTML += `<img src="http://www.splitcloud-app.com/posts/trending/country_${countryCode}.png" />`
+          playlist.innerHTML += `<img src="http://www.splitcloud-app.com/posts/popular/country_${countryCode}.png" />`
         });
       });
     </script>
