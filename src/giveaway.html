@@ -93,12 +93,13 @@
             <h3>Participate and win a promo-code to remove ALL Ads from SplitCloud!</h3>
             <h1>Instructions</h1>
             <div id="playlist">
-                <div><span>1</span><div class='desc'><h4><b>Follow</b> <i>@splitcloudapp</i> on Instagram or TikTok</h4></div></div>
-                <div><span>2</span><div class='desc'><h4><b>Like</b>the giveaway post</h4></div></div>
-                <div><span>3</span><div class='desc'><h4><b>Tag</b>your friends in the comments</h4></div></div>
-                <div><span>🎉</span><div class='desc'><h4><b>10 winners will be chosen randomly at the end of the promotion!</b></h4></div></div>
+                <div><span>1</span><div class='desc'><h4><b>Follow </b><i>@splitcloudapp</i> on Instagram or TikTok</h4></div></div>
+                <div><span>2</span><div class='desc'><h4><b>Like </b>the giveaway post</h4></div></div>
+                <div><span>3</span><div class='desc'><h4><b>Tag </b>your friends in the comments</h4></div></div>
+                <div><span>🎉</span><div class='desc'><h4><b>All winners will be chosen randomly at the end of the promotion!</b></h4></div></div>
             </div>
-            <div class="cta-button" >Let's Go!</div>
+            <div class="cta-button cta-button-insta" >Open Instagram</div>
+            <div class="cta-button cta-button-tiktok" >Open TikTok</div>
           </div>
         </div>
         <div class="row">
@@ -121,7 +122,14 @@
        ga('send', 'pageview');
        ga('require', 'outboundLinkTracker');
       const $ = document.querySelector.bind(document);
-      $('.cta-button').addEventListener('click', () => { window.location ='instagram://user?username=splitcloud_app'; });
+      $('.cta-button-insta').addEventListener('click', () => { window.location ='instagram://user?username=splitcloud_app'; });
+      $('.cta-button-tiktok').addEventListener('click', () => {
+        window.postMessage(JSON.stringify({
+          action: 'open_external',
+          url: 'https://www.tiktok.com/@splitcloudapp'
+        }),'*');
+        setTimeout(() => window.location = 'https://www.tiktok.com/@splitcloudapp', 500); 
+      });
       /*!
         loadCSS: load a CSS file asynchronously.
         [c]2014 @scottjehl, Filament Group, Inc.
