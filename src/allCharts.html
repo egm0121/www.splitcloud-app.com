@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>SplitCloud - Countries Charts</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=15" />
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        font-size: 40px;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+      }
+      body {
+        background: linear-gradient(to top, #01213b, #006fbb);
+        color:white;
+      }
+      .playlist {
+        display:flex;
+        flex:1;
+        flex-wrap: wrap;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+      }
+      .app-logo {
+          height: 100px;
+      }
+      header {
+        padding-bottom: 10px;
+        padding-top: 50px;
+      }
+      h1 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0.3rem 0;
+        margin-top: 0.7rem;
+      }
+      .playlist h4{
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0px 0px;
+        line-height:  0.6rem;
+      }
+      .playlist div > span {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          bottom: -6px;
+          margin-right: 20px;
+          color: #a7dcf3;
+          position: relative;
+      }
+      .playlist img{
+        min-width: 50px;
+        width: 50px;
+        height: 50px;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+      .playlist .trackContainer {
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0.4rem 25px;
+        width: 28%;
+      }
+      .playlist .trackNbr{
+        width: 75px;
+        font-size: 0.75rem;
+        text-align: center;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.40);
+      }
+      .playlist .trackInfo{
+        display:flex;
+        flex-direction: column;
+        width: 80%;
+      }
+      .playlist .trackTitle{
+        font-size: 0.5rem;
+        color:white;
+      }
+      .playlist .trackSubtitle{
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.4rem;
+      }
+      .country {
+        position: absolute;
+        top: 65px;
+        right: 60px;
+        font-size: 0.7rem;
+      }
+      .country img {
+        top: -6px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <header>
+            <div class="row">
+              <div class="span12">
+                <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+              </div>
+            </div>
+        </header>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Popular Charts</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <div id="popularList" class="playlist"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12 text-center">
+            <h1>Trending Charts</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span12">
+            <div id="trendingList" class="playlist"></div>
+          </div>
+        </div>
+      </div>
+    <script src='./js/helpers.js'></script>
+    <script>
+      splitcloud.helpers.loadCSS('http://fonts.googleapis.com/css?family=Lato:700,300');
+      const $ = document.querySelector.bind(document);
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const generateCountyList = (chartKind, root) => {
+        fetch(`https://rest.splitcloud-app.com/regions?appVersion=9.0`)
+        .then(resp => resp.json()).then(data => {
+            Object.keys(data).map(countryCode => {
+              const countryName = data[countryCode];
+              root.innerHTML += `
+                <a class="trackContainer" href="./chartListView.html?region=${countryCode}&kind=${chartKind}" target="_blank">
+                  <img src="https://www.countryflags.io/${countryCode}/flat/64.png"/>
+                  <div class="trackInfo">
+                    <h4 class="trackTitle">${countryName}</h4>
+                  </div>
+                </a>`;  
+            });
+        });
+      }
+      generateCountyList('popular', $('#popularList'));
+      generateCountyList('trending', $('#trendingList'));
+      
+    </script>
+  </body>
+</html>
