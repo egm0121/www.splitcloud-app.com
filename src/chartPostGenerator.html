@@ -96,7 +96,7 @@
             <div class="row">
               <div class="span12">
                 <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
-                <span class="country text-right"><span>US</span> <img src="https://www.countryflags.io/us/flat/64.png"></span>
+                <span class="country text-right"><span>US</span> <img src="https://flagcdn.com/h60/us.png"></span>
               </div>
             </div>
         </header>
@@ -120,7 +120,7 @@
       const chartKind = urlParams.get('kind') || 'trending';
       $('h1').innerText = `${chartKind === 'trending' ? `Trending`: `Popular`} this week`;
       $('.country > span').innerText = `${country}`;
-      $('.country img').src = `https://www.countryflags.io/${country}/flat/64.png`;
+      $('.country img').src = `https://flagcdn.com/h60/${country.toLowerCase()}.png`;
       fetch(`https://rest.splitcloud-app.com/charts?kind=${chartKind}&region=${country}&appVersion=9.0`)
       .then(resp => resp.json()).then(data => {
           data.slice(0,5).map((item, idx) => {
