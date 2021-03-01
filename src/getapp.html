@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Get Splitcloud App - The Double Music Player</title>
+    <meta name="description" content="Get Splitcloud App - Two music players in one device">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Get Splitcloud App!" />
+    <meta property="og:image" content="http://www.splitcloud-app.com/img/splitcloud_split_players.png" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="css/dist.css?v=25" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="row">
+          <div class="span10">
+            <a href="./">
+              <img src='./img/splitcloud.logo.png' class='app-logo' alt='splitcloud Logo'/>
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="row">
+        <div class="span12 text-center">
+          <a href="https://itunes.apple.com/us/app/splitcloud/id1244515007?mt=8" id='ios' style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width:200px;height:70px;background-size:contain;"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12 text-center">
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12 text-center">
+          <a href="https://play.google.com/store/apps/details?id=com.splitcloud" id='android' ><img style="width: 200px;vertical-align: top;" src="./img/play_store_badge.png"></a>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.location.replace(/^(iPhone|iPad|iPod)/.test(navigator.platform) ? 
+        document.querySelector('#ios').getAttribute('href') : 
+        document.querySelector('#android').getAttribute('href')
+      );
+    </script>
+  </body>
+</html>
