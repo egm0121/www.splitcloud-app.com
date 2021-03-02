@@ -10,9 +10,9 @@
     <meta property="og:image" content="http://www.splitcloud-app.com/img/splitcloud_split_players.png" />
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" href="css/dist.css?v=25" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="../css/dist.css?v=25" />
   </head>
   <body>
     <div class="container">
@@ -40,7 +40,12 @@
         </div>
       </div>
     </div>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
     <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('set', 'transport', 'beacon');
+      ga('create', 'UA-100899493-1', 'auto');
+      ga('send', 'pageview');
       window.location.replace(/^(iPhone|iPad|iPod)/.test(navigator.platform) ? 
         document.querySelector('#ios').getAttribute('href') : 
         document.querySelector('#android').getAttribute('href')
