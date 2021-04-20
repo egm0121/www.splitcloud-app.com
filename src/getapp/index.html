@@ -46,10 +46,13 @@
       ga('set', 'transport', 'beacon');
       ga('create', 'UA-100899493-1', 'auto');
       ga('send', 'pageview');
-      window.location.replace(/^(iPhone|iPad|iPod)/.test(navigator.platform) ? 
-        document.querySelector('#ios').getAttribute('href') : 
-        document.querySelector('#android').getAttribute('href')
-      );
+      setTimeout(() => {
+        window.location.replace(
+          /^(iPhone|iPad|iPod)/.test(navigator.platform) ? 
+            document.querySelector('#ios').getAttribute('href') : 
+            document.querySelector('#android').getAttribute('href')
+        );
+      },700);
     </script>
   </body>
 </html>
