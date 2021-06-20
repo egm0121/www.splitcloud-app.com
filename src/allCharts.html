@@ -115,7 +115,13 @@
         </div>
         <div class="row">
           <div class="span12">
-            <div id="popularList" class="playlist"></div>
+            <div id="popularList" class="playlist">
+              <div class="trackInfo">
+                <a class="trackContainer">
+                  <h4 class="trackTitle">Loading...</h4>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -125,7 +131,11 @@
         </div>
         <div class="row">
           <div class="span12">
-            <div id="trendingList" class="playlist"></div>
+            <div id="trendingList" class="playlist">
+              <a class="trackContainer">
+                <h4 class="trackTitle">Loading...</h4>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -138,6 +148,7 @@
       const generateCountyList = (chartKind, root) => {
         fetch(`https://rest.splitcloud-app.com/regions?appVersion=9.0`)
         .then(resp => resp.json()).then(data => {
+            root.innerHTML = '';
             Object.keys(data).map(countryCode => {
               const countryName = data[countryCode];
               root.innerHTML += `
