@@ -27,11 +27,6 @@
       </header>
       <div class="row">
         <div class="span12 text-center">
-          <a href="https://itunes.apple.com/us/app/splitcloud/id1244515007?mt=8" id='ios' style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg) no-repeat;width:200px;height:70px;background-size:contain;"></a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="span12 text-center">
         </div>
       </div>
       <div class="row">
@@ -47,9 +42,7 @@
       ga('create', 'UA-100899493-1', 'auto');
       ga('send', 'pageview');
       setTimeout(() => {
-        window.location.replace(
-          /^(iPhone|iPad|iPod)/.test(navigator.platform) ? 
-            document.querySelector('#ios').getAttribute('href') : 
+        window.location.replace(         
             document.querySelector('#android').getAttribute('href')
         );
       },700);
